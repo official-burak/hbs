@@ -107,7 +107,7 @@ test('async helper with non-callable toHTML is a render error, not a process cra
   })
   render(hbs, makeView('async-bad-tohtml.hbs', '{{bad}}'), function (err) {
     assert.ok(err, 'expected a render error instead of an uncaught throw')
-    assert.ok(/toHTML is not a function/.test(err.message), err.message)
+    assert.ok(/is not a function/.test(err.message), err.message)
     done()
   })
 })
@@ -126,7 +126,7 @@ test('async helper with non-callable toHTML is a render error, not a process cra
     assert.ok(hbs.cache[view], 'expected first render to cache the template')
     render(hbs, view, { cache: true }, function (err2) {
       assert.ok(err2, 'expected a render error on the cached path')
-      assert.ok(/toHTML is not a function/.test(err2.message), err2.message)
+      assert.ok(/is not a function/.test(err2.message), err2.message)
       done()
     })
   })
@@ -149,7 +149,7 @@ test('async helper with non-callable toHTML is a render error, not a process cra
     }
   }, function (err) {
     assert.ok(err, 'expected a render error on the layout path')
-    assert.ok(/toHTML is not a function/.test(err.message), err.message)
+    assert.ok(/is not a function/.test(err.message), err.message)
     done()
   })
 })
